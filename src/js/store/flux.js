@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			people: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -20,6 +21,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
+				// let store = getStore();
+				console.log("ciao");
+				fetch("https://swapi.dev/api/people/")
+					.then(response => response.json())
+					.then(data => {
+						console.log("data", data);
+						setStore({ people: data.results });
+					});
+
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
