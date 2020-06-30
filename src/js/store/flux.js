@@ -5,12 +5,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			demo: [
 				{
+					title: "SECOND",
+					background: "white",
+					initial: "white"
+				},
+				{
 					title: "FIRST",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "SECOND",
+					title: "THIRD",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "FOURTH",
 					background: "white",
 					initial: "white"
 				}
@@ -23,17 +33,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loadPeople: () => {
 				// let store = getStore();
-				console.log("ciao");
+
 				fetch("https://swapi.dev/api/people/")
 					.then(response => response.json())
 					.then(data => {
 						console.log("data", data);
 						setStore({ people: data.results });
 					});
-
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
 			},
 			loadPlanets: () => {
 				// let store = getStore();

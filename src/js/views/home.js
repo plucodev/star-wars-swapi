@@ -8,6 +8,8 @@ export const Home = () => {
 	return (
 		<>
 			<People />
+			{/* <Card title="Ciao ragazzi!" description="gfsh;kjgfsah;kgajhdfg;kjhgfda;kjhgfdjk;" />
+			<Card title="Hello Guys" /> */}
 		</>
 	);
 };

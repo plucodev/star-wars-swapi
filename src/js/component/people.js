@@ -12,9 +12,18 @@ export const People = props => {
 					<h1>Characters</h1>
 				</div>
 
-				<div className="d-flex flex-row flex-nowrap scrolling-row">
+				<div className="d-flex  flex-nowrap overflow-auto">
 					{store.people.map((item, index) => {
-						return <Card title={item.name} key={index} />;
+						return (
+							<Card
+								index={index}
+								name={item.name}
+								eye={item.eye_color}
+								skin={item.skin_color}
+								mass={item.mass}
+								key={index}
+							/>
+						);
 					})}
 				</div>
 			</div>

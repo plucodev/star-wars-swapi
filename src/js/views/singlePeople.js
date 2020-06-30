@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const SinglePeople = props => {
 	const { store, actions } = useContext(Context);
 	console.log("*********", props.match.params.theid);
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">
-				This will show the demo element: {store.demo[props.match.params.theid].background}
-			</h1>
+			<h1 className="display-4">Name: {store.people[props.match.params.theid].name}</h1>
+			<h1 className="display-4">Eye Color: {store.people[props.match.params.theid].eye_color}</h1>
+			<h1 className="display-4">Skin Color: {store.people[props.match.params.theid].skin_color}</h1>
+			<h1 className="display-4">Age: {store.people[props.match.params.theid].birth_year}</h1>
 
 			<hr className="my-4" />
 
@@ -23,6 +24,6 @@ export const Single = props => {
 	);
 };
 
-Single.propTypes = {
+SinglePeople.propTypes = {
 	match: PropTypes.object
 };
